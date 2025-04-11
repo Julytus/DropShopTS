@@ -1,6 +1,6 @@
 import React from 'react';
 import { menuData } from '../../data/menuData';
-import MenuRenderer from '../menu/MenuRenderer';
+import MenuRenderer from './MenuRenderer';
 
 const Navigation: React.FC = () => {
   return (

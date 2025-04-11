@@ -1,101 +1,126 @@
 export interface MenuItem {
   text: string;
-  url?: string;
+  url: string;
   children?: MenuItem[];
+  image?: string;
+  className?: string;
+  isTitle?: boolean;
+}
+
+export interface MenuGroup {
+  title: string;
+  items: MenuItem[];
+  image?: string;
+}
+
+export interface MegaMenu {
+  groups: MenuGroup[];
+  banner?: {
+    url: string;
+    image: string;
+    alt: string;
+  };
 }
 
 export interface MainMenuItem {
   text: string;
   url?: string;
+  megaMenu?: MegaMenu;
   children?: MenuItem[];
-  megaMenu?: {
-    groups: {
-      title: string;
-      items: MenuItem[];
-    }[];
-  };
 }
 
 export const menuData: MainMenuItem[] = [
   {
-    text: "Home",
-    children: [
-      { text: "Arts Propelled", url: "index.html" },
-      { text: "Decor Thriving", url: "index-2.html" },
-      { text: "Savvy Delight", url: "index-3.html" },
-      { text: "Perfect Escapes", url: "index-4.html" }
-    ]
-  },
-  {
-    text: "Shop",
+    text: 'Home',
+    url: '#',
     megaMenu: {
       groups: [
         {
-          title: "SHOP PAGES",
+          title: 'HOME GROUP',
           items: [
-            { text: "Shop No Sidebar", url: "shop.html" },
-            { text: "Shop Left Sidebar", url: "shop-left-sidebar.html" },
-            { text: "Shop Right Sidebar", url: "shop-right-sidebar.html" },
-            { text: "Shop Fullwidth No Space", url: "shop-fullwidth-no-gutters.html" },
-            { text: "Shop Fullwidth No Sidebar", url: "shop-fullwidth.html" },
-            { text: "Shop Fullwidth Left Sidebar", url: "shop-fullwidth-left-sidebar.html" },
-            { text: "Shop Fullwidth Right Sidebar", url: "shop-fullwidth-right-sidebar.html" }
+            { text: 'Arts Propelled', url: '/', image: 'assets/images/demo/menu/home-01.webp' },
+            { text: 'Decor Thriving', url: '/', image: 'assets/images/demo/menu/home-02.webp' },
+            { text: 'Savvy Delight', url: '/', image: 'assets/images/demo/menu/home-03.webp' },
+            { text: 'Perfect Escapes', url: '/', image: 'assets/images/demo/menu/home-04.webp' },
           ]
         },
         {
-          title: "PRODUCT PAGES",
+          title: 'HOME GROUP',
           items: [
-            { text: "Basic", url: "product-details.html" },
-            { text: "Fullwidth", url: "product-details-fullwidth.html" },
-            { text: "Sticky Details", url: "product-details-sticky.html" },
-            { text: "Width Sidebar", url: "product-details-sidebar.html" },
-            { text: "Extra Content", url: "product-details-extra-content.html" },
-            { text: "Variations Images", url: "product-details-image-variation.html" },
-            { text: "Bought Together", url: "product-details-group.html" },
-            { text: "Product 360", url: "product-details-360.html" }
+            { text: 'Kitchen Cozy', url: '/', image: 'assets/images/demo/menu/home-05.webp' },
+            { text: 'Dreamy Designs', url: '/', image: 'assets/images/demo/menu/home-06.webp' },
+            { text: 'Crispy Recipes', url: '/', image: 'assets/images/demo/menu/home-07.webp' },
+            { text: 'Decoholic Chic', url: '/', image: 'assets/images/demo/menu/home-08.webp' },
+          ]
+        },
+        {
+          title: 'HOME GROUP',
+          items: [
+            { text: 'Reblended Dish', url: '/', image: 'assets/images/demo/menu/home-9.webp' },
+            { text: 'Craftin House', url: '/', image: 'assets/images/demo/menu/home-10.webp' },
+            { text: 'Craftswork Biz', url: '/', image: 'assets/images/demo/menu/home-11.webp' },
           ]
         }
-      ]
+      ],
+      banner: {
+        url: '#',
+        image: 'assets/images/banner/menu-banner-1.webp',
+        alt: 'Home Menu Banner'
+      }
     }
   },
   {
-    text: "Project",
-    children: [
-      { text: "Portfolio 3 Columns", url: "portfolio-3-columns.html" },
-      { text: "Portfolio 4 Columns", url: "portfolio-4-columns.html" },
-      { text: "Portfolio 5 Columns", url: "portfolio-5-columns.html" },
-      { text: "Portfolio Details", url: "portfolio-details.html" }
-    ]
-  },
-  {
-    text: "Pages",
-    children: [
-      { text: "About us", url: "about-us.html" },
-      { text: "About us 02", url: "about-us-2.html" },
-      { text: "Contact us", url: "contact-us.html" },
-      { text: "Coming Soon", url: "coming-soon.html" },
-      { text: "Page 404", url: "404.html" }
-    ]
+    text: 'Shop',
+    url: '#',
+    megaMenu: {
+      groups: [
+        {
+          title: 'SHOP PAGES',
+          items: [
+            { text: 'Shop', url: '/' },
+          ]
+        },
+        {
+          title: 'PRODUCT PAGES',
+          items: [
+            { text: 'PRODUCT', url: '/' },
+          ]
+        }
+      ],
+      banner: {
+        url: '#',
+        image: 'assets/images/banner/menu-banner-2.webp',
+        alt: 'Shop Menu Banner'
+      }
+    }
   },
   {
     text: "Blog",
+    url: '#',
     children: [
-      {
-        text: "Standard Layout",
-        children: [
-          { text: "Right Sidebar", url: "blog-right-sidebar.html" },
-          { text: "Left Sidebar", url: "blog-left-sidebar.html" },
-          { text: "Full Width", url: "blog-fullwidth.html" }
-        ]
-      },
-      {
-        text: "Grid Layout",
-        children: [
-          { text: "Right Sidebar", url: "blog-grid-right-sidebar.html" },
-          { text: "Left Sidebar", url: "blog-grid-left-sidebar.html" },
-          { text: "Full Width", url: "blog-grid-fullwidth.html" }
-        ]
-      }
+      { text: 'Portfolio', url: '/' },
+      { text: 'Portfolio', url: '/' },
+      { text: 'Portfolio', url: '/' },
+    ]
+  },
+  {
+    text: 'Project',
+    url: '#',
+    children: [
+      { text: 'Portfolio', url: '/' },
+      { text: 'Portfolio', url: '/' },
+      { text: 'Portfolio', url: '/' },
+    ]
+  },
+  {
+    text: 'Pages',
+    url: '#',
+    children: [
+      { text: 'About us', url: '/' },
+      { text: 'About us 02', url: '/' },
+      { text: 'Contact us', url: '/' },
+      { text: 'Coming Soon', url: '/' },
+      { text: 'Page 404', url: '/' },
     ]
   }
 ]; 

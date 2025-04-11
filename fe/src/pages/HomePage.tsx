@@ -1,7 +1,7 @@
 import Header from "../components/Header";
 import StickyHeader from "../components/StickyHeader";
 import Topbar from "../components/Topbar";
-import MobileHeader from "../components/mobile/MobileHeader";
+import MobileHeader from "../components/MobileHeader";
 import OffCanvasContainer from "../components/offcanvas/OffCanvasContainer";
 
 const HomePage = () => {

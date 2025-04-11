@@ -1,14 +1,14 @@
 import React from 'react';
-import MobileHeaderLogo from './MobileHeaderLogo';
-import MobileHeaderTools from './MobileHeaderTools';
+import BaseHeaderTools from './header/BaseHeaderTools';
+import BaseHeaderLogo from './header/BaseHeaderLogo';
 
 interface MobileHeaderProps {
   isSticky?: boolean;
 }
 
 const MobileHeader: React.FC<MobileHeaderProps> = ({ isSticky = false }) => {
-  const headerClass = isSticky 
-    ? "mobile-header sticky-header bg-white section d-xl-none" 
+  const headerClass = isSticky
+    ? "mobile-header sticky-header bg-white section d-xl-none"
     : "mobile-header bg-white section d-xl-none";
 
   return (
@@ -17,11 +17,21 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({ isSticky = false }) => {
         <div className="row align-items-center">
 
           {/* Header Logo Start */}
-          <MobileHeaderLogo />
+          <BaseHeaderLogo
+            logoUrl="assets/images/logo/logo-2.webp"
+            logoClassName=""
+          />
           {/* Header Logo End */}
 
           {/* Header Tools Start */}
-          <MobileHeaderTools />
+          <BaseHeaderTools
+            breakpoints={{
+              login: 'd-sm-block',
+              search: 'd-sm-block',
+              wishlist: 'd-sm-block',
+              cart: ''
+            }}
+          />
           {/* Header Tools End */}
 
         </div>
