@@ -6,7 +6,7 @@ interface MenuRendererProps {
   className?: string;
 }
 
-export const MenuRenderer: React.FC<MenuRendererProps> = ({ menuItems, className = 'site-main-menu justify-content-center' }) => {
+export const MenuRenderer: React.FC<MenuRendererProps> = ({ menuItems, className }) => {
   // Render menu item với submenu
   const renderMenuItem = (item: MainMenuItem) => {
     return (
@@ -68,11 +68,13 @@ export const MenuRenderer: React.FC<MenuRendererProps> = ({ menuItems, className
   };
 
   return (
-    <nav className={className}>
-      <ul>
-        {menuItems.map(item => renderMenuItem(item))}
-      </ul>
-    </nav>
+    <div className={className}>
+      <nav className='site-main-menu justify-content-center'>
+        <ul>
+          {menuItems.map(item => renderMenuItem(item))}
+        </ul>
+      </nav>
+    </div>
   );
 };
 

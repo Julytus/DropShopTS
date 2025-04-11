@@ -1,8 +1,8 @@
 import React from 'react';
 import Navigation from './header/Navigation';
 import HeaderLanguage from './header/HeaderLanguage';
-import HeaderLogo from './header/HeaderLogo';
-import HeaderTools from './header/HeaderTools';
+import BaseHeaderLogo from './header/BaseHeaderLogo';
+import BaseHeaderTools from './header/BaseHeaderTools';
 
 const Header: React.FC = () => {
   return (
@@ -15,11 +15,11 @@ const Header: React.FC = () => {
           {/* Header Language & Currency End */}
 
           {/* Header Logo Start */}
-          <HeaderLogo />
+          <BaseHeaderLogo />
           {/* Header Logo End */}
 
           {/* Header Tools Start */}
-          <HeaderTools />
+          <BaseHeaderTools />
           {/* Header Tools End */}
 
         </div>
