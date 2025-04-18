@@ -110,7 +110,7 @@ public class OrderServiceImpl implements OrderService {
     @IsUser
     public PageResponse<OrderResponse> getMyOrders(int page, int limit) {
         String username = SecurityUtil.getCurrentLogin()
-                .orElseThrow(() -> new AppException(ErrorCode.ACCESS_DINED));
+                .orElseThrow(() -> new AppException(ErrorCode.ACCESS_DENIED));
 
         Pageable pageable = PageRequest.of(page - 1, limit);
         Page<Order> orderPage = orderRepository.findByUser_Email(username, pageable);

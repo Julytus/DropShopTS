@@ -11,7 +11,7 @@ public enum ErrorCode {
     USER_EXISTED(400, "User existed", HttpStatus.BAD_REQUEST),
     USER_NOT_EXISTED(400, "User not existed", HttpStatus.BAD_REQUEST),
     UNAUTHORIZED(401, "Unauthorized", HttpStatus.UNAUTHORIZED),
-    ACCESS_DINED(403, "Access denied", HttpStatus.FORBIDDEN),
+    ACCESS_DENIED(403, "Access denied", HttpStatus.FORBIDDEN),
     TOKEN_INVALID(400, "Token invalid", HttpStatus.BAD_REQUEST),
     CATEGORY_NOT_FOUND(404, "Category not found", HttpStatus.NOT_FOUND),
     ORDER_NOT_FOUND(404, "Order not found", HttpStatus.NOT_FOUND),
