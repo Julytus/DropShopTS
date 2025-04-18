@@ -60,7 +60,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserResponse updateUserInfo(UpdateUserRequest request) {
         String username = SecurityUtil.getCurrentLogin()
-                .orElseThrow(() -> new JwtAuthenticationException(ErrorCode.ACCESS_DINED));
+                .orElseThrow(() -> new JwtAuthenticationException(ErrorCode.UNAUTHORIZED));
         User user = findByUsername(username);
 
         user.setBirthday(request.getBirthday());
@@ -72,7 +72,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserResponse updateAvatar(MultipartFile file) {
         String username = SecurityUtil.getCurrentLogin()
-                .orElseThrow(() -> new JwtAuthenticationException(ErrorCode.ACCESS_DINED));
+                .orElseThrow(() -> new JwtAuthenticationException(ErrorCode.UNAUTHORIZED));
 
         User user = findByUsername(username);
         String avatarUrl = fileProcessor.uploadAvatar(file, username);
@@ -90,7 +90,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserResponse fetchProfile() {
         String username = SecurityUtil.getCurrentLogin()
-                .orElseThrow(() -> new JwtAuthenticationException(ErrorCode.ACCESS_DINED));
+                .orElseThrow(() -> new JwtAuthenticationException(ErrorCode.UNAUTHORIZED));
 
         return UserResponseMapper.fromUser(
                 userRepository.findByEmail(username)

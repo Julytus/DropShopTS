@@ -1,5 +1,6 @@
 package com.julytus.DropShop.controller;
 
+import com.julytus.DropShop.annotation.IsAdmin;
 import com.julytus.DropShop.dto.request.ProductRequest;
 import com.julytus.DropShop.dto.response.PageResponse;
 import com.julytus.DropShop.dto.response.ProductResponse;
@@ -32,7 +33,6 @@ public class ProductController {
                 .data(result)
                 .build();
     }
-
     @PostMapping(value = "/product", consumes = { MediaType.MULTIPART_FORM_DATA_VALUE })
     ResponseData<ProductResponse> createProduct(
             @ModelAttribute ProductRequest request) {
